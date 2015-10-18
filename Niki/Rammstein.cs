@@ -1,14 +1,15 @@
 ﻿namespace Computers.UI
 {
-    class Rammstein
+    public class Rammstein
     {
-        int value;
+        private int value;
+
         internal Rammstein(int a)
         {
-            Amount = a;
+            this.Amount = a;
         }
 
-        int Amount
+        public int Amount
         {
             get;
             set;
@@ -16,12 +17,12 @@
 
         public void SaveValue(int newValue)
         {
-            value = newValue;
+            this.value = newValue;
         }
 
         public int LoadValue()
         {
-            return value;
+            return this.value;
         }
     }
 }

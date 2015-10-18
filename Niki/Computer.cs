@@ -2,54 +2,58 @@
 {
     using System.Collections.Generic;
 
-    class Computer
+    public class Computer
     {
-        IEnumerable<HardDriver> HardDrives { get; set; }
-        HardDriver VideoCard { get; set; }
-        internal void ChargeBattery(int percentage)
-        {
-            battery.Charge(percentage);
+        private readonly LaptopBattery battery;
 
-            VideoCard.Draw(string.Format("Battery status: {0}", battery.Percentage));
-        }
-        Cpu Cpu { get; set; }
-        readonly LaptopBattery battery;
-        Rammstein Ram { get; set; }
-        public void Play(int guessNumber)
+        internal Computer(ComputerType type, Cpu cpu, Rammstein ram, IEnumerable<HardDriver> hardDrives, HardDriver videoCard, LaptopBattery battery)
         {
-            Cpu.rand(1, 10);
-            var number = Ram.LoadValue();
-            if (number + 1 != guessNumber + 1) VideoCard.Draw(string.Format("You didn't guess the number {0}.", number));
-            else VideoCard.Draw("You win!");
-        }
-        internal Computer(ComputerType type,
-            Cpu cpu,
+            this.Cpu = cpu;
+            this.Ram = ram;
+            this.HardDrives = hardDrives;
+            this.VideoCard = videoCard;
 
-            Rammstein
-            ram,
-            IEnumerable<HardDriver> hardDrives,
-            HardDriver videoCard,
-            LaptopBattery battery)
-        {
-            Cpu = cpu;
-            Ram = ram;
-            HardDrives = hardDrives;
-            VideoCard =
-
-                videoCard;
-            if (type !=
-                ComputerType.LAPTOP
-                && type
-                !=
-                ComputerType.PC)
-                VideoCard.IsMonochrome = true;
+            if (type != ComputerType.LAPTOP && type != ComputerType.PC)
+            {
+                this.VideoCard.IsMonochrome = true;
+            }
+                
             this.battery = battery;
         }
+
+        public Cpu Cpu { get; set; }
+
+        public IEnumerable<HardDriver> HardDrives { get; set; }
+
+        public HardDriver VideoCard { get; set; }
+
+        public Rammstein Ram { get; set; }
+        
+        internal void Play(int guessNumber)
+        {
+            Cpu.Rand(1, 10);
+            var number = this.Ram.LoadValue();
+            if (number + 1 != guessNumber + 1)
+            {
+                this.VideoCard.Draw(string.Format("You didn't guess the number {0}.", number));
+            }
+            else
+            {
+                this.VideoCard.Draw("You win!");
+            }
+        }
+
+        internal void ChargeBattery(int percentage)
+        {
+            this.battery.Charge(percentage);
+
+            this.VideoCard.Draw(string.Format("Battery status: {0}", this.battery.Percentage));
+        }
+
         internal void Process(int data)
         {
-            Ram.SaveValue(data);
-            // TODO: Fix it
-            Cpu.SquareNumber();
+            this.Ram.SaveValue(data);
+            this.Cpu.SquareNumber();
         }
     }
 }

@@ -21,7 +21,7 @@ Found bottlenecks:
 	* 
 
 Found bugs:
-	* 
+	* When computer is created video card is no initialized and if Process is called NullReferenceExepton is raised
 	* 
 	* 
 

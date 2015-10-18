@@ -1,0 +1,6 @@
+C:\Users\felix_de_suza\Desktop\Computers\Problem\Niki\bin\Debug\Computers.UI.exe.config
+C:\Users\felix_de_suza\Desktop\Computers\Problem\Niki\bin\Debug\Computers.UI.exe
+C:\Users\felix_de_suza\Desktop\Computers\Problem\Niki\bin\Debug\Computers.UI.pdb
+C:\Users\felix_de_suza\Desktop\Computers\Problem\Niki\bin\Debug\System.Collections.Generic.dll
+C:\Users\felix_de_suza\Desktop\Computers\Problem\Niki\obj\Debug\Computers.UI.exe
+C:\Users\felix_de_suza\Desktop\Computers\Problem\Niki\obj\Debug\Computers.UI.pdb

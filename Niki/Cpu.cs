@@ -13,6 +13,7 @@
         static readonly Random Random = new Random();
 
         internal Cpu(byte numberOfCores, byte numberOfBits, Rammstein ram, HardDriver videoCard) {
+            this.videoCard = videoCard;
             this.numberOfBits = numberOfBits;
             this.ram = ram;
             this.NumberOfCores = numberOfCores;

@@ -1,11 +1,9 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using C = System.Console;
-
-namespace Computers11
+﻿namespace Computers.UI
 {
+
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     class HardDriver
     {
@@ -88,16 +86,16 @@ namespace Computers11
         {
             if (this.IsMonochrome)
             {
-                C.ForegroundColor = ConsoleColor.Gray;
-                C.WriteLine(a);
-                C.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine(a);
+                Console.ResetColor();
             }
 
             else
             {
-                C.ForegroundColor = ConsoleColor.Green;
-                C.WriteLine(a);
-                C.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(a);
+                Console.ResetColor();
             }
 
         }
